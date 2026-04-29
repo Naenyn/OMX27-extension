@@ -26,15 +26,29 @@ These instructions are intended for building on macOS.
 ## Build environment requirements
 
 - macOS with `zsh`
-- Bitwig Studio installed at `/Applications/Bitwig Studio.app`
+- Bitwig Studio installed (default app path: `/Applications/Bitwig Studio.app`)
 - Java toolchain available in shell (`javac`/`jar`)
 - `jenv` configured in your shell startup (`.zshrc`) if you use version-managed Java
 
 ## Build steps
 
-This project uses a simple `javac` build script and expects Bitwig's API JAR at:
+This project uses a simple `javac` build script and compiles with `--release 8` (Java 8 bytecode target).
+
+By default it expects Bitwig's API JAR at:
 
 `/Applications/Bitwig Studio.app/Contents/Java/bitwig.jar`
+
+If your Bitwig app is somewhere else, override the path:
+
+```zsh
+BITWIG_APP_PATH="/path/to/Bitwig Studio.app" ./build.zsh
+```
+
+Or point directly at the JAR:
+
+```zsh
+BITWIG_JAR="/path/to/bitwig.jar" ./build.zsh
+```
 
 Run from a login zsh shell so `jenv`/`.zshrc` Java selection is applied:
 
@@ -48,4 +62,13 @@ Build output:
 
 ## Install in Bitwig
 
-Copy the built file to your Bitwig user extensions folder, then restart/reload controller scripts in Bitwig.
+Copy `build/OMX-27.bwextension` to your Bitwig user extensions folder:
+
+`~/Documents/Bitwig Studio/Extensions`
+
+Then restart Bitwig or reload controller scripts.
+
+## Notes
+
+- This README currently documents macOS paths only.
+- Windows/Linux users can still build, but will need to adapt Bitwig and user-library paths.

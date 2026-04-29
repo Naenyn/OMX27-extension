@@ -7,10 +7,12 @@ SRC_JAVA="$ROOT/src/main/java"
 RES="$ROOT/src/main/resources"
 CLASSES="$ROOT/build/classes"
 OUT_EXT="$ROOT/build"
-BW_JAR="/Applications/Bitwig Studio.app/Contents/Java/bitwig.jar"
+BITWIG_APP_PATH="${BITWIG_APP_PATH:-/Applications/Bitwig Studio.app}"
+BW_JAR="${BITWIG_JAR:-$BITWIG_APP_PATH/Contents/Java/bitwig.jar}"
 
 if [[ ! -r $BW_JAR ]]; then
   print -u2 "Missing Bitwig API jar: $BW_JAR"
+  print -u2 "Set BITWIG_APP_PATH or BITWIG_JAR before running build.zsh."
   exit 1
 fi
 
