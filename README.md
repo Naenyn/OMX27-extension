@@ -84,5 +84,6 @@ Then restart Bitwig or reload controller scripts.
 
 ## Notes
 
+- Designed and tested against Bitwig Studio `5.3.13`. Behavior on other Bitwig versions is not yet verified.
 - This README currently documents macOS paths only.
 - Windows/Linux users can still build, but will need to adapt Bitwig and user-library paths.
