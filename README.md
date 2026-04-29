@@ -25,6 +25,14 @@ This is an unofficial community extension (separate from the official OMX-27 fir
 
 All mappings are configurable in Bitwig controller settings.
 
+## Default knob bank behavior
+
+- **Bank 1**: Knobs 1-4 -> selected track Remotes 1-4, Knob 5 -> selected track Volume
+- **Bank 2**: Knobs 1-4 -> selected track Remotes 5-8, Knob 5 -> selected track Volume
+- **Bank 5**: Knobs 1-3 -> selected track Sends 1-3, Knob 4 -> selected track Pan, Knob 5 -> selected track Volume
+
+By default, Knob 5 (`CC 7`) controls selected track volume in all knob banks.
+
 ## Build (macOS)
 
 These instructions are intended for building on macOS.
