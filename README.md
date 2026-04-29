@@ -39,7 +39,7 @@ This project uses a simple `javac` build script and expects Bitwig's API JAR at:
 Run from a login zsh shell so `jenv`/`.zshrc` Java selection is applied:
 
 ```zsh
-zsh -lic 'cd "/Users/naenyn/git/OMX27-extension" && ./build.zsh'
+zsh -lic 'cd "/path/to/OMX27-extension" && ./build.zsh'
 ```
 
 Build output:
