@@ -1,2 +1,51 @@
-# OMX27-extension
-A Bitwig extension for Okyeron's OMX-27
+# OMX-27 Bitwig Extension
+
+Bitwig controller extension for Okyeron's OMX-27.
+
+## What it does
+
+- Passes OMX note data into Bitwig (instrument playing / MIDI recording).
+- Maps transport controls (stop/play/record) and mirrors state back to OMX LEDs.
+- Supports metronome toggle, count-in control, and visual metronome flash.
+- Supports separate visible-metronome mode (LED flash can be independent from Bitwig metronome audio).
+- Maps knob CCs to Bitwig remotes plus volume, pan, and sends.
+
+## Default CC mappings
+
+- **Transport**: Stop `102`, Play `103`, Record `104`
+- **Metronome**: Toggle `105`, Count-in `106`, Flash output `107`, Visible toggle `108`
+- **Remotes**: `110-117` (Remote 1-8)
+- **Mix**: Volume `7`, Pan `101`, Send 1 `126`, Send 2 `127`, Send 3 `100`
+
+All mappings are configurable in Bitwig controller settings.
+
+## Build (macOS)
+
+These instructions are intended for building on macOS.
+
+## Build environment requirements
+
+- macOS with `zsh`
+- Bitwig Studio installed at `/Applications/Bitwig Studio.app`
+- Java toolchain available in shell (`javac`/`jar`)
+- `jenv` configured in your shell startup (`.zshrc`) if you use version-managed Java
+
+## Build steps
+
+This project uses a simple `javac` build script and expects Bitwig's API JAR at:
+
+`/Applications/Bitwig Studio.app/Contents/Java/bitwig.jar`
+
+Run from a login zsh shell so `jenv`/`.zshrc` Java selection is applied:
+
+```zsh
+zsh -lic 'cd "/Users/naenyn/git/OMX27-extension" && ./build.zsh'
+```
+
+Build output:
+
+`build/OMX-27.bwextension`
+
+## Install in Bitwig
+
+Copy the built file to your Bitwig user extensions folder, then restart/reload controller scripts in Bitwig.
