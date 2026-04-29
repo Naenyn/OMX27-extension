@@ -1,6 +1,12 @@
 # OMX-27 Bitwig Extension
 
 Bitwig controller extension for Okyeron's OMX-27.
+This is an unofficial community extension (separate from the official OMX-27 firmware project).
+
+## About OMX-27
+
+- Product page (kit): [OMX-27 v3 - MIDI Keyboard Kit](https://denki-oto.com/products/omx-27-v3-midi-keyboard-kit)
+- Official OMX-27 firmware/code repository: [okyeron/OMX-27](https://github.com/okyeron/OMX-27)
 
 ## What it does
 
